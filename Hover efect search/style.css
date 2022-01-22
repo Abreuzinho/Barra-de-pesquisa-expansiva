@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  'Sarala', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(224, 203, 203);
+    overflow: hidden;
+}
+
+.caixa {
+    position: relative;
+    width: 60px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.caixa:hover{
+    width: 400px;
+}
+
+.caixa::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 100%;
+    background: linear-gradient(#fff, #fff, #e3e3e3);
+    z-index: 1;
+    filter: blur(1px);
+}
+
+.caixa::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -1px;
+    width: 10px;
+    height: 100%;
+    background:#ffffff;
+    z-index: 1;
+    filter: blur(1px);
+}
+
+
+
+.sombra {
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: calc(100% + 50px);
+    height: 300px;
+    background:linear-gradient(180deg, rgba(0,0,0,0.1), transparent, transparent);
+    transform-origin: top;
+    transform: skew(45deg);
+    pointer-events: none;
+}
+
+.sombra::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background:rgb(224, 203, 203);
+    z-index: 1;
+}
+
+.caixa input {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 10px 25px;
+    outline: none;
+    font-size: 1.1em;
+    color: rgb(12, 10, 10);
+    background: #fff;
+    /* border-radius: 50px;  */
+    box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.1),
+    15px 15px 15px rgba(0, 0, 0, 0.1),
+   10px 10px 15px rgba(0, 0, 0, 0.1),
+    20px 20px 15px rgba(0, 0, 0, 0.1),
+    inset 1px 1px 2px #fff;
+}
+
+.caixa input::placeholder, 
+.caixa input {
+    color: transparent
+}
+.caixa:hover input::placeholder,
+.caixa:hover input {
+    color: rgb(12, 10, 10);
+
+}
+
+ion-icon {
+    position: absolute;
+    right: 20px;
+    color: rgb(12, 10, 10);
+    font-size: 1.5em;
+    cursor: pointer;
+}
